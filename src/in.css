@@ -1,0 +1,132 @@
+
+
+ .signin{
+background-color:white;
+height:9%;
+Width:100%;
+color:grey;
+Font-size:120%;
+background-color:white;
+} 
+.SingUp-Login{
+background-color:white;
+border:solid;
+margin-left:25%;
+margin-right:25%;
+margin-top:15%;
+margin-bottom:20%;
+width:40%;
+height:50%;
+}
+.alignm{
+ padding-left:10px;
+ margin-bottom:2%;
+}
+.aboutUs{
+margin-left:10%;
+margin-bottom:2px;
+}
+.forma{
+	border-radius:4px;
+	margin-bottom:2%;
+	margin-left:2%;
+}
+
+
+
+<?php
+session_start();
+if (isset($_SESSION['admin'])) {
+  header("location:index.php");
+}
+
+include('conn.php');
+?>
+
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="aboutus.css" media="all" />
+<!--link rel="stylesheet" type="text/css" href="in.css" media="all" /-->
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>LoginORSIgnUP</title>
+</head>
+<body>
+
+<center><img src="logo.png" width="50px" height="50px">Namal Mess Management System</center>
+	
+	<ul class="headerlist">
+  <li class="headerinner"><a class="active" href="index.php" >Home</a></li>
+  <li class="headerinner"><a href="Suggetions_Complains.php">Suggestions and complaints</a></li>
+  <li class="headerinner"><a href="About_Us.html">About US</a></li>
+  <li class="headerinner"><a href="weekly_menu.php">Menu</a></li>
+  
+  <?php
+  
+    if (isset($_SESSION['admin'])) {
+
+      ?>
+      <li class="headerinner"><a href="Add New.php">Add New</a></li>
+      <?php
+    }
+  ?>
+ 
+
+
+    <?php
+    if (!(isset($_SESSION['admin']))) {
+
+      ?>
+         <li  class="headerinner" style="float:right;"><a href="signin.php"><strong>SignIn</strong></a></li>
+    <?php
+    }
+    ?>
+
+
+    <?php
+    if (isset($_SESSION['admin'])) {
+
+      ?>
+         <li  class="headerinner" style="float:right;"><a href="signout.php"><strong>Log Out </strong></a></li>
+    <?php
+    }
+    ?>
+
+</ul>
+
+<img src="background1.jpg" width="100%">
+<div class="SingUp-Login" align="center" style="position: absolute; top: 50px;">
+<div id="signin" class="signin">
+Login with your Mess ID
+<hr>	
+</div>
+<div class="aboutUs" >
+<form action="login_process.php" method="post" >
+<div class="alignm" align="left"> 
+<table>
+<tr>
+<td>Username</td>
+<td>  <input type="text" name="username"  class="forma" required></td>
+<tr>
+<td>Password</td>
+<td><input type="password" name="pass" class="forma" required></td>
+</tr>
+</tr>
+</table>
+
+<div class="link"  align="center">
+<a href=""> Forgot Password? </a>
+</div>
+<br>
+<hr>
+</p>
+<br>
+<div id="" align="center">
+<input type="submit" value="Sign in">
+</div>
+ </div>
+</form>
+ </div>
+ </div>
+
+</body>
+</html>

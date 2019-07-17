@@ -1,0 +1,55 @@
+.head{
+height:10%;
+width:100%;
+background-color:blue;
+padding:0px;
+font-size:200%;
+display:block;
+}
+.headerlist{
+	
+    list-style-type: none;
+    padding: 10;
+    overflow: hidden;
+    background-color: #f1f1f1;
+	display:block;
+}
+.headerinner {
+    float: left;
+}
+
+.headerinner a {
+    display: inline-block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li as:hover {
+    background-color: #f1f1f1;
+}
+
+li a.active {
+    background-color: brown;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+body{
+	
+}
+.line{
+height:1%;
+width:100%;
+}
+.footimg{
+height:40px;
+width:40px;
+border-radius: 8%;
+}
+#onhover:hover {
+    content: "images/icon-twitter.gif" ;
+}
